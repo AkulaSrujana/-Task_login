@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-image: url('https://imgcdn.stablediffusionweb.com/2024/3/4/a84b0f50-106d-463d-b55b-f955e0a32a6b.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 20px;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            font-size: 30px;
+            color: black;
+            font-weight: bold;
+        }
+        
+        .login-box {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text inside the box */
+    }
+    
+    .ud-btn {
+    
+    /* Adjust button color */
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    margin-left: 500px;
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline */
+    font-size: 15px;
+    transition: background-color 0.3s;
+    }
+
+.ud-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    }
+    
+    .signup-box {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text inside the box */
+}
+
+.ud-btn {
+    color: white;
+    background-color: black;
+    /* Adjust button color */
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 80px;
+    position: absolute;
+    top: 30px;
+    text-decoration: none; /* Remove underline */
+    font-size: 15px;
+    transition: background-color 0.3s;
+}
+
+.ud-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+        .dropdown-container {
+            position: absolute;
+            top: 10px;
+            right: 2px;
+            display: flex; /* Use Flexbox for layout */
+            gap: 2px; /* Space between dropdowns */
+        }
+        .dropdown {
+            position: relative;
+            width: 50px;
+            /* Set a fixed width for dropdowns */
+        }
+        .dropdown-label {
+            display: block;
+            background: transparent;
+            color: none;
+            padding: 10px;
+            border: 0px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .dropdown-options {
+            display: none; /* Hidden by default */
+            position: absolute;
+            background: white;
+            color: black;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            margin-top: 1px;
+            z-index: 10;
+        }
+        .dropdown-options div {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .dropdown-options div:hover {
+            background: #f0f0f0;
+        }
+        .input-container {
+            position: relative;
+            margin-bottom: 20px; /* Space between input fields */
+            width: 250px; /* Set a fixed width for input fields */
+        }
+        label {
+            position: absolute;
+            left: 10px;
+            top: 12px;
+            transition: 0.2s ease all;
+            color: #999;
+            pointer-events: none;
+            font-size: 14px;
+        }
+        input {
+            width: 100%;
+            padding: 10px; /* Reduced padding for a smaller input */
+            border: 3px solid #ccc;
+            border-radius: 5px;
+            background: transparent;
+            color: white;
+            outline: none;
+        }
+        input:focus {
+            border-color: #007bff; /* Change border color on focus */
+        }
+        input:focus + label,
+        input:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 10px;
+            font-size: 12px;
+            color: #007bff; /* Change label color when focused or filled */
+        }
+        .social-icons {
+            margin-top: 8px;
+        }
+        .social-icons a {
+            margin-right: 60px; /* Space between icons */
+            text-decoration: none;
+            color: #fff; /* Icon color */
+            font-size: 24px; /* Icon size */
+        }
+    </style>
+</head>
+<body>
+
+
+<a style= 'color: black; font-size:16px; font-weight:bold;top:9px; background-color:lightyellow; margin-left:460px;'data-purpose="header-login" href="https://www.udemy.com/join/login-popup/?locale=en_US&amp;response_type=html&amp;next=https%3A%2F%2Fwww.udemy.com%2Fjoin%2Fsignup-popup%2F%3Flocale%3Den_US%26response_type%3Dhtml%26next%3Dhttps%253A%252F%252Fwww.udemy.com%252Flogout%252F%26persist_locale%3D" class="ud-btn ud-btn-medium ud-btn-secondary ud-heading-sm"><span class="ud-btn-label">Log in</span></a>
+
+<a style= 'font-size:16px; font-weight:bold; top:9px; margin-left:560px;'data-purpose="header-signup" href="https://www.udemy.com/join/signup-popup/?locale=en_US&amp;response_type=html&amp;next=https%3A%2F%2Fwww.udemy.com%2Fjoin%2Fsignup-popup%2F%3Flocale%3Den_US%26response_type%3Dhtml%26next%3Dhttps%253A%252F%252Fwww.udemy.com%252Flogout%252F%26persist_locale%3D" class="ud-btn ud-btn-medium ud-btn-primary ud-heading-sm"><span class="ud-btn-label">Sign up</span></a>
+
+<div class="dropdown-container" style= "margin-right:15px;">
+    <div class="dropdown">
+        <div style= "color:black;font-size:18px; font-weight:bold; width:70px;" class="dropdown-label" onclick="toggleDropdown('userTypeDropdown')"> <i class='fas fa-user-circle' style='font-size:25px'></i>
+        <i class="fas fa-chevron-down" style="font-size:10px" ></i> </div>
+        <div class="dropdown-options" id="userTypeDropdown">
+            <div onclick="selectOption('userTypeDropdown', 'Regular User')">Regular User</div>
+            <div onclick="selectOption('userTypeDropdown', 'Guest')">Guest</div>
+        </div><br>
+    </div>
+    
+    <div class="dropdown">
+        <div style= "color:black;font-size:17px; font-weight:bold; width:100px;"  class="dropdown-label" onclick="toggleDropdown('languageDropdown')"><i class="fas fa-globe" style='font-size:24px'></i>
+        <i class="fas fa-chevron-down" style="font-size:9px"></i></div>
+        <div class="dropdown-options" id="languageDropdown">
+            <div onclick="selectOption('languageDropdown', 'English')">English</div>
+            <div onclick="selectOption('languageDropdown', 'Spanish')">Spanish</div>
+            
+        </div>
+    </div>
+</div>
+
+<h2>Create an account</h2>
+
+<form action="/action_page.php">
+    <div class="input-container">
+        <input type="text" id="firstname" name="firstname" required placeholder=" " />
+        <label for="firstname">First name</label>
+    </div>
+    
+    <div class="input-container">
+        <input type="text" id="lastname" name="lastname" required placeholder=" " />
+        <label for="lastname">Last name</label>
+    </div>
+
+    <div class="input-container">
+        <input type="email" id="email" name="email" required placeholder=" " />
+        <label for="email">Email*</label>
+    </div>
+    
+    <div class="input-container">
+        <input type="password" id="password" name="password" required placeholder=" " />
+        <label for="password">Password*</label>
+    </div>
+    <p style="margin-left: 3px; font-size:15px;">Forgot your password? </p>
+    
+    <input style="color:white; font-size:16px; font-weight: bold; width: 400px; background-color:purple" type="submit" value="Login">
+</form>
+
+<p style="margin-left: 10px;">Already have an account? 
+    <strong style="color:purple; font-size:18px; text-decoration: underline; margin-left: 15px;">Login</strong>
+</p><br>
+
+<p style="margin-right: 30px; font-size:18px;">
+    <span style="display: inline-block; width: 50px; height: 0.8px; background-color: rgba(0, 0, 0, 0.5); margin: 0 10px; vertical-align:middle;"></span>
+    Other login options
+    <span style="display: inline-block; width: 70px; height: 0.8px; background-color: rgba(0, 0, 0, 0.5); margin: 0 10px; vertical-align: middle;"></span>
+</p>
+
+<div class="social-icons" style="text-align: left; margin-top: 10px; margin-left: 70px;">
+   <a href="https://www.google.com" target="_blank" style="color:green" title="Google">
+        <i class="fab fa-google"></i>
+    </a>
+    <a href="https://www.facebook.com" target="_blank" style="color:blue" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.twitter.com" target="_blank" style="color:darkblue" title="Twitter">
+        <i class="fab fa-twitter"></i>
+    </a>
+</div><br><br>
+<p style="margin-left: 10px;"> Don't have an account? 
+    <strong style="color:purple; font-size:17px; text-decoration: underline; margin-left:6px;">Sign up</strong>
+</p>
+<p style="margin-left: 10px;">
+    <strong style="color:purple; font-size:17px; text-decoration: underline; margin-left: 3px;">Login with your organization</strong>
+</p><br>
+
+
+<script>
+    function toggleDropdown(id) {
+        const dropdown = document.getElementById(id);
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function selectOption(dropdownId, optionText) {
+        const dropdownLabel = document.querySelector(`.dropdown-label[onclick="toggleDropdown('${dropdownId}')"]`);
+        dropdownLabel.textContent = optionText;
+        document.getElementById(dropdownId).style.display = 'none';
+    }
+
+    // Close dropdown if clicked outside
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropdown-label')) {
+            const dropdowns = document.querySelectorAll('.dropdown-options');
+            dropdowns.forEach(dropdown => {
+                dropdown.style.display = 'none';
+            });
+        }
+    }
+</script>
+
+</body>
+</html>
+
